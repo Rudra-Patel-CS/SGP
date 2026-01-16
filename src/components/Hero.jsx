@@ -1,6 +1,7 @@
 import "./Hero.css";
 import React, { useState, useEffect } from "react";
-
+// import React from "react";
+import { useNavigate } from "react-router-dom";
 
 // Import your images
 import logo from "../assets/Green Brown Illustration Clothes Fashion Logo for Store.png";
@@ -17,6 +18,7 @@ import product6 from "../assets/product6.jpg";
 
 
 const Hero = () => {
+ const navigate = useNavigate();   //  ADD THIS
 
   return (
     <div className="hero-wrapper">
@@ -31,7 +33,11 @@ const Hero = () => {
           <li>Gallery</li>
           <li>About Us</li>
         </ul>
-        <button className="signup-btn">Sign Up</button>
+        {/* UPDATED BUTTON */}
+        <button
+          className="signup-btn"
+          onClick={() => navigate("/login")}>Sign Up
+        </button>
       </nav>
 
       {/* Hero Section */}
